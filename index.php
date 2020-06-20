@@ -81,6 +81,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'repos') {
     'direction' => 'desc'
   ]));
 
+  echo '<h1>ConsentGithub</h1>';
   echo '<ul>';
   foreach($repos as $repo) {
     echo '<li><a href="' . $repo['html_url'] . '">'
@@ -93,15 +94,18 @@ if(isset($_GET['action']) && $_GET['action'] == 'repos') {
 // the user is already logged in
 if(!isset($_GET['action'])) {
   if(!empty($_SESSION['access_token'])) {
-    echo '<h3>Logged In</h3>';
+    echo '<h1>ConsentGithub</h1>';
+    echo '<p>You are logged in.</p>';
     echo '<p><a href="?action=repos">View Repos</a></p>';
     echo '<p><a href="?action=logout">Log Out</a></p>';
+    echo '<p>You can revoke the ConsentGithub permissions in "Settings" under "Authorized OAuth Apps".</p>';
+    echo '<img src="./RevokeConsentGithubPermissions.png" height="422" width="773">>'; 
   } else {
     echo '<h1>ConsentGithub</h1>';
     echo '<p>This web app was written as an exercise to understand the OAuth2 authorization code grant flow with Github identities. ';
     echo 'It is based on the sample code from Aaron Parecki at <a href="https://github.com/aaronpk/sample-oauth2-client">https://github.com/aaronpk/sample-oauth2-client</a>.</p>';
     echo '<p>If you have a Github account, you can test it if you click on the link below. ';
-    echo 'This web app will list your public repositiories once you have given it access permission.</p>';
+    echo 'This web app will list your public repositiories once you have given it access permission. This is the permission the web app will request:</p>';
     echo '<img src="./AuthorizeConsentGithub.png" height="931" width="500">'; 
     echo '<p><a href="?action=login">Log In</a></p>';
   }
