@@ -8,4 +8,4 @@ You can test it if you have a Github account. This web app will list your public
 
 You can revoke the permissions in the Github settings:
 
-![Revoke permissions](AuthorizeConsentGithub.png)
+![Revoke permissions](RevokeConsentGithubPermissions.png)
