@@ -5,3 +5,7 @@ This web app was written as an exercise to understand the OAuth2 authorization c
 You can test it if you have a Github account. This web app will list your public repositiories once you have given it access permission. This is the permission the web app will request:
 
 ![Authorize ConsentGithub](AuthorizeConsentGithub.png)
+
+You can revoke the permissions in the Github settings:
+
+![Revoke permissions](AuthorizeConsentGithub.png)
