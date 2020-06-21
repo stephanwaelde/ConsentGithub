@@ -1,7 +1,7 @@
 <?php
 // Fill these out with the values you got from Github
-$githubClientID = '3067a72b56ea71a5521e';
-$githubClientSecret = '<here goes the client secret>';
+$githubClientID = '3067a72b56ea71a5521e';  //The ClientID from ConsentGithub
+$githubClientSecret = '<ConsentGithub Client Secret>';
 
 // This is the URL we'll send the user to first to get their authorization
 $authorizeURL = 'https://github.com/login/oauth/authorize';
@@ -98,14 +98,15 @@ if(!isset($_GET['action'])) {
     echo '<p>You are logged in.</p>';
     echo '<p><a href="?action=repos">View Repos</a></p>';
     echo '<p><a href="?action=logout">Log Out</a></p>';
-    echo '<p>You can revoke the ConsentGithub permissions in "Settings" under "Authorized OAuth Apps".</p>';
+    echo '<p>The ConsentGithub permissions can be revoked in the Github account\'s settings under "Authorized OAuth Apps".</p>';
     echo '<img src="./RevokeConsentGithubPermissions.png" height="422" width="773">>'; 
   } else {
     echo '<h1>ConsentGithub</h1>';
     echo '<p>This web app was written as an exercise to understand the OAuth2 authorization code grant flow with Github identities. ';
-    echo 'It is based on the sample code from Aaron Parecki at <a href="https://github.com/aaronpk/sample-oauth2-client">https://github.com/aaronpk/sample-oauth2-client</a>.</p>';
-    echo '<p>If you have a Github account, you can test it if you click on the link below. ';
-    echo 'This web app will list your public repositiories once you have given it access permission. This is the permission the web app will request:</p>';
+    echo 'It is based on the sample code from Aaron Parecki at <a href="https://github.com/aaronpk/sample-oauth2-client">https://github.com/aaronpk/sample-oauth2-client</a>. ';
+    echo 'The code from this web app can be found at <a href="https://github.com/stephanwaelde/consentgithub">https://github.com/stephanwaelde/consentgithub</a>.</p>';
+    echo '<p>It can be tested with any Github account by clicking on the link below. ';
+    echo 'This web app will list the public repositiories once it has been given access permission. This is the permission the web app will request:</p>';
     echo '<img src="./AuthorizeConsentGithub.png" height="931" width="500">'; 
     echo '<p><a href="?action=login">Log In</a></p>';
   }
